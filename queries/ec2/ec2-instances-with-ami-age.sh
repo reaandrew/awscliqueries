@@ -6,7 +6,7 @@ aws ec2 describe-instances \
     --output text | while read -r instance_id ami_id
 do
     # Get the details of the AMI including creation date, owner ID, and name
-    ami_details=$(aws ec2 describe-images --region "$region" \
+    ami_details=$(aws ec2 describe-images \
                     --image-ids "$ami_id" \
                     --query 'Images[*].[CreationDate,OwnerId,Name]' \
                     --output text) | \
