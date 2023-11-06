@@ -27,4 +27,4 @@ export -f describe_image
 aws ec2 describe-instances \
     --query 'Reservations[*].Instances[*].[InstanceId, ImageId]' \
     --output json | jq -r '.[][] | @csv' | sed 's/"//g' | \
-    parallel --will-cite --jobs 10 --colsep ',' get_describe_image
+    parallel --will-cite --jobs 10 --colsep ',' describe_image
