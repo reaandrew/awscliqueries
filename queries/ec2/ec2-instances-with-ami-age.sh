@@ -1,10 +1,7 @@
 #!/bin/bash
 
-# Set the desired AWS region
-region="your-region" # replace with your region like us-east-1, us-west-2, etc.
-
 # List all EC2 instances in the region and get their AMI IDs
-aws ec2 describe-instances --region "$region" \
+aws ec2 describe-instances \
     --query 'Reservations[*].Instances[*].[InstanceId, ImageId]' \
     --output text | while read -r instance_id ami_id
 do
@@ -21,6 +18,7 @@ do
           age_days=$(( (current_date - ami_age) / 86400 ))
 
           # Output the instance ID, AMI ID, AMI age, owner ID, and AMI name
-          echo "Instance ID: $instance_id, AMI ID: $ami_id, AMI Age: $age_days days, Owner ID: $owner_id, AMI Name: $name"
+          echo "InstanceID, AmiID, AmiAge, DaysOld, OwnerID, Name"
+          echo "$instance_id,$ami_id,$age_days, $owner_id, $name"
     done
 done
