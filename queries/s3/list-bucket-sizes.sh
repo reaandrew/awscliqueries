@@ -10,7 +10,6 @@ do
     --end-time $(date +%Y-%m-%dT%H:%M:%SZ) \
     --period 31536000 \
     --statistics Average \
-    --region eu-west-2 \
     --metric-name BucketSizeBytes \
     --dimensions Name=BucketName,Value="$bucketName" Name=StorageType,Value=StandardStorage \
     --output json)
