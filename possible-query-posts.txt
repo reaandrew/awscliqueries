@@ -1,6 +1,7 @@
 0. DONE Listing all EC2 instances in a specific region and the age of their AMI.
-1. List the average size of each S3 bucket
+1. DONE List the average size of each S3 bucket
 2. Retrieving the uptime time for EC2 instances which are running.
+1. Creating Another Text Histogram but this time for S3 Bucket Sizes Using Awk
 3. Finding all unattached Elastic IPs in your account.
 4. Querying for all RDS instances that are not using encrypted storage.
 5. Listing all S3 buckets along with their creation dates.
