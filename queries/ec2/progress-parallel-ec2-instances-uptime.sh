@@ -19,8 +19,11 @@ export -f get_uptime
 
 current_time=$(date +%s)
 
-instance_ids=$(aws ec2 describe-instances --filter 'Name=instance-state-name,Values=running' \
-  --query 'Reservations[*].Instances[*].[InstanceId]' \
-  --output text | sed 's/"//g')
+# Get instance IDs into an array
+mapfile -t instance_ids < <(aws ec2 describe-instances \
+  --filters "Name=instance-state-name,Values=running" \
+  --query 'Reservations[*].Instances[*].InstanceId' \
+  --output text)
 
-parallel --will-cite --bar --jobs 5 --colsep ',' get_uptime {} "$current_time" ::: "$instance_ids"
+# Run the jobs in parallel with a progress bar
+parallel --bar --jobs 5 get_uptime ::: "${instance_ids[@]}"
