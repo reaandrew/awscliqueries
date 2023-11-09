@@ -19,7 +19,8 @@ export -f get_uptime
 
 current_time=$(date +%s)
 
-aws ec2 describe-instances --filter 'Name=instance-state-name,Values=running' \
+instance_ids=$(aws ec2 describe-instances --filter 'Name=instance-state-name,Values=running' \
   --query 'Reservations[*].Instances[*].[InstanceId]' \
-  --output text | sed 's/"//g' | \
-    parallel --will-cite --bar --jobs 5 --colsep ',' get_uptime {} "$current_time"
+  --output text | sed 's/"//g')
+
+parallel --will-cite --bar --jobs 5 --colsep ',' get_uptime {} "$current_time" ::: "$instance_ids"
