@@ -1,0 +1,52 @@
+- DONE Listing all EC2 instances in a specific region and the age of their AMI.
+- DONE List the average size of each S3 bucket
+- DONE Retrieving the uptime time for EC2 instances which are running.
+- DONE Querying for all RDS instances that are not using encrypted storage.
+- Finding all unattached Elastic IPs in your account.
+- Creating Another Text Histogram but this time for S3 Bucket Sizes Using Awk
+- Listing all S3 buckets along with their creation dates.
+- Filtering S3 objects by size in a specific bucket.
+- Getting the total size of an S3 bucket.
+- Listing all IAM users and their last activity timestamp.
+- Querying for IAM policies attached to a specific role.
+- Finding all security groups with open ports to the world.
+- Listing access keys older than 90 days.
+- Querying all Lambda functions with a specific runtime.
+- Getting a list of CloudFront distributions and their status.
+- Listing all CloudWatch alarms and their current state.
+- Querying for all VPCs and associated subnets.
+- Finding EC2 instances with a specific tag value.
+- Listing all ECS clusters and the services running on them.
+- Getting the encryption status of EBS volumes.
+- Finding all snapshots shared with other AWS accounts.
+- Querying Route53 for all record sets in a specific hosted zone.
+- Listing all Auto Scaling groups and their current instance count.
+- Finding all instances with a public IP address.
+- Querying for AWS resources that aren’t tagged according to company policy.
+- Listing all KMS keys and their usage dates.
+- Getting a list of all active CloudFormation stacks.
+- Querying for any IAM roles with cross-account access.
+- Finding ELBs (Elastic Load Balancers) not in use.
+- Listing DynamoDB tables and their sizes.
+- Getting all AWS Config rules and their compliance status.
+- Listing all AWS Direct Connect connections.
+- Finding all reserved EC2 instances about to expire.
+- Listing all NAT Gateways and their data processing metrics.
+- Querying for all AWS Organizations accounts and their email addresses.
+- Finding all API Gateway endpoints and their methods.
+- Listing all active step functions and their last start time.
+- Querying for AWS resources that are scheduled for deletion.
+- Listing all Amazon MQ brokers and their deployment mode.
+- Finding all Elasticache clusters and node types.
+- Getting a list of all VPC endpoints and their services.
+- Querying for all AWS Glue jobs and their status.
+- Listing all EMR clusters and their configurations.
+- Finding all RDS instances without a recent snapshot.
+- Getting the number of objects in each S3 bucket.
+- Listing all AMIs created by your account.
+- Querying for unused Elastic Load Balancer (ELB) listeners.
+- Finding all AWS Managed AD directories in your account.
+- Listing the EBS volumes that are available and not in use.
+- Querying for the network ACL rules in a specific VPC.
+- Listing all Amazon WorkSpaces and their running mode.
+- Getting a count of all EC2 instances across all regions.
