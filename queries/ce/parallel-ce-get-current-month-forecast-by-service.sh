@@ -10,7 +10,9 @@ total_forecast=$(aws ce get-cost-forecast --time-period Start="$current_day",End
 echo "Total forecast cost: $total_forecast"
 
 function get_forecast(){
-  service="$1"
+  service="${1//\'/}"
+  current_day="$2"
+  end_of_month="$3"
   filter_json=$(jq -n --arg service "$service" '{"Dimensions": {"Key": "SERVICE", "Values": [$service]}}')
       forecast=$(aws ce get-cost-forecast --time-period Start="$current_day",End="$end_of_month" --granularity MONTHLY --metric "AMORTIZED_COST" --filter "$filter_json" 2>&1)
 
@@ -26,4 +28,4 @@ export -f get_forecast
 
 aws ce get-cost-and-usage --time-period Start="$start_of_month",End="$current_day" --granularity MONTHLY --metrics "AmortizedCost" --group-by Type="DIMENSION",Key="SERVICE" | \
    jq -r -c '.ResultsByTime[].Groups[] | .Keys[0] | @sh' | \
-    parallel --will-cite --jobs 5 --colsep ',' get_forecast
+    parallel --will-cite --jobs 5 --colsep ',' get_forecast {} "$current_day" "$end_of_month"
