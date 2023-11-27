@@ -12,11 +12,11 @@ function get_forecast(){
       forecast=$(aws ce get-cost-forecast --time-period Start="$current_day",End="$end_of_month" --granularity MONTHLY --metric "AMORTIZED_COST" --filter "$filter_json" 2>&1)
 
       if [[ $forecast == *"Insufficient amount of historical data"* ]]; then
-          echo "Service: $service, Error: Insufficient historical data to generate forecast."
+          echo "$service, Insufficient historical data to generate forecast."
       else
           forecast_cost=$(echo "$forecast" | jq -r '.Total.Amount | tonumber')
           forecast_cost_rounded=$(printf "%.2f" "$forecast_cost")
-          echo "Service: $service, Forecast Cost: $forecast_cost_rounded"
+          echo "$service, $forecast_cost_rounded"
       fi
 }
 
