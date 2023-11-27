@@ -2,11 +2,8 @@
 - DONE List the average size of each S3 bucket
 - DONE Retrieving the uptime time for EC2 instances which are running.
 - DONE Querying for all RDS instances that are not using encrypted storage.
-- Finding all unattached Elastic IPs in your account.
 - Creating Another Text Histogram but this time for S3 Bucket Sizes Using Awk
 - Listing all S3 buckets along with their creation dates.
-- Filtering S3 objects by size in a specific bucket.
-- Getting the total size of an S3 bucket.
 - Listing all IAM users and their last activity timestamp.
 - Querying for IAM policies attached to a specific role.
 - Finding all security groups with open ports to the world.
@@ -50,3 +47,4 @@
 - Querying for the network ACL rules in a specific VPC.
 - Listing all Amazon WorkSpaces and their running mode.
 - Getting a count of all EC2 instances across all regions.
+- Finding all unattached Elastic IPs in your account.
