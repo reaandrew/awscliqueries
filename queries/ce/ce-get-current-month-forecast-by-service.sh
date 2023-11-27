@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-set -e
-
 start_of_month=$(date -u "+%Y-%m-01")
 current_day=$(date -u "+%Y-%m-%d")
 end_of_month=$(date -u "+%Y-%m-%d" -d "$(date -u +'%Y-%m-01') +1 month -1 day")
@@ -23,4 +21,3 @@ echo "$current_costs" | jq -c '.ResultsByTime[].Groups[]' | while IFS= read -r l
         echo "Service: $service, Forecast Cost: $forecast_cost"
     fi
 done
-
