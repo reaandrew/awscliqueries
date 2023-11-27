@@ -20,7 +20,8 @@ function get_forecast(){
           echo "Service: $service, Error: Insufficient historical data to generate forecast."
       else
           forecast_cost=$(echo "$forecast" | jq -r '.Total.Amount | tonumber')
-          echo "Service: $service, Forecast Cost: $forecast_cost"
+          forecast_cost_rounded=$(printf "%.2f" "$forecast_cost")
+          echo "Service: $service, Forecast Cost: $forecast_cost_rounded"
       fi
 }
 
