@@ -4,7 +4,7 @@ start_of_month=$(date -u "+%Y-%m-01")
 current_day=$(date -u "+%Y-%m-%d")
 end_of_month=$(date -u "+%Y-%m-%d" -d "$(date -u +'%Y-%m-01') +1 month -1 day")
 
-total_forecast=$(aws ce get-cost-forecast --time-period Start="$current_day",End="$end_of_month" --granularity MONTHLY --metric "AMORTIZED_COST" \
+total_forecast=$(aws ce get-cost-forecast --time-period Start="$current_day",End="$end_of_month" --granularity MONTHLY --metric "AMORTIZED_COST" | \
   jq -r '.Total.Amount')
 
 echo "Total forecast cost: $total_forecast"
