@@ -5,10 +5,6 @@ current_day=$(date -u "+%Y-%m-%d")
 end_of_month=$(date -u "+%Y-%m-%d" -d "$(date -u +'%Y-%m-01') +1 month -1 day")
 
 current_costs=$(aws ce get-cost-and-usage --time-period Start=$start_of_month,End=$current_day --granularity MONTHLY --metrics "AmortizedCost" --group-by Type="DIMENSION",Key="SERVICE")
-total_forecast=$(aws ce get-cost-forecast --time-period Start="$current_day",End="$end_of_month" --granularity MONTHLY --metric "AMORTIZED_COST" | \
-  jq -r '.Total.Amount')
-
-echo "Total forecast cost: $total_forecast"
 
 echo "$current_costs" | jq -c '.ResultsByTime[].Groups[]' | while IFS= read -r line; do
     service=$(echo "$line" | jq -r '.Keys[0]')
