@@ -2,6 +2,7 @@
 - DONE List the average size of each S3 bucket
 - DONE Retrieving the uptime time for EC2 instances which are running.
 - DONE Querying for all RDS instances that are not using encrypted storage.
+- Show the forecast cost for the current month broken down by service
 - Creating Another Text Histogram but this time for S3 Bucket Sizes Using Awk
 - Listing all S3 buckets along with their creation dates.
 - Listing all IAM users and their last activity timestamp.
