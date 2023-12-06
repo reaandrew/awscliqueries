@@ -3,6 +3,7 @@
 - DONE Retrieving the uptime time for EC2 instances which are running.
 - DONE Querying for all RDS instances that are not using encrypted storage.
 - DONE Show the forecast cost for the current month broken down by service
+- Show the last 6 months of cost broken down by service and output a tabular view
 - Show a breakdown for Security Hub Findings for the last 24 hours
 - Creating Another Text Histogram but this time for S3 Bucket Sizes Using Awk
 - Listing all S3 buckets along with their creation dates.
