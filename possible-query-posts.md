@@ -5,6 +5,12 @@
 - DONE Show the forecast cost for the current month broken down by service
 - DONE Show the last 6 months of cost broken down by service and output a tabular view
 - DONE List and visualise all AWS services and sub resources in an account
+
+- Create a manifest of resources currently inside an Account and Region
+- Create a complete list of AWS IAM Permissions and a little utility to expand permission wildcards
+- Create a monitoring script for Lambdas
+
+
 - Show a breakdown for Security Hub Findings for the last 24 hours
 - Creating Another Text Histogram but this time for S3 Bucket Sizes Using Awk
 - Listing all S3 buckets along with their creation dates.
